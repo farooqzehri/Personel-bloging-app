@@ -1,60 +1,34 @@
-import React from 'react'
+import React from 'react';
 
 function Register() {
   return (
-    <>
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
-        <form className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg space-y-5">
-          
-          <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-800">
-              Create Account
-            </h1>
-            <p className="text-gray-500 mt-2">
-              Signup to get started
-            </p>
-          </div>
+    <div className="min-h-screen bg-[#7E3AF2] flex items-center justify-center px-4">
+      <form className="w-full max-w-md bg-white p-10 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] space-y-6">
+        <div className="text-center">
+          <h1 className="text-4xl font-black text-gray-900 tracking-tight">Create Account</h1>
+          <p className="text-gray-500 mt-2 font-medium">Join our community today</p>
+        </div>
 
-          <input
-            type="text"
-            placeholder="First Name"
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-          />
+        <div className="grid grid-cols-2 gap-4">
+            <input type="text" placeholder="First Name" className="w-full border-gray-200 border rounded-xl px-4 py-3 focus:ring-2 focus:ring-[#7E3AF2] outline-none transition" />
+            <input type="text" placeholder="Last Name" className="w-full border-gray-200 border rounded-xl px-4 py-3 focus:ring-2 focus:ring-[#7E3AF2] outline-none transition" />
+        </div>
 
-          <input
-            type="text"
-            placeholder="Last Name"
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-          />
+        <input type="email" placeholder="Email Address" className="w-full border-gray-200 border rounded-xl px-4 py-3 focus:ring-2 focus:ring-[#7E3AF2] outline-none transition" />
+        <input type="password" placeholder="Password" className="w-full border-gray-200 border rounded-xl px-4 py-3 focus:ring-2 focus:ring-[#7E3AF2] outline-none transition" />
+        <input type="password" placeholder="Repeat Password" className="w-full border-gray-200 border rounded-xl px-4 py-3 focus:ring-2 focus:ring-[#7E3AF2] outline-none transition" />
 
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-          />
+        <button className="w-full bg-[#7E3AF2] hover:bg-black text-white font-bold py-4 rounded-xl shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          Sign Up
+        </button>
 
-          <input
-            type="password"
-            placeholder="Password"
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-          />
-
-          <input
-            type="password"
-            placeholder="Repeat Password"
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-          />
-
-          <button
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300"
-          >
-            Signup
-          </button>
-
-        </form>
-      </div>
-    </>
-  )
+        <p className="text-center text-sm text-gray-500">
+          Already have an account? <span className="text-[#7E3AF2] font-bold cursor-pointer hover:underline">Login</span>
+        </p>
+      </form>
+    </div>
+  );
 }
 
-export default Register
+// For Login.jsx, simply remove the Name fields and the "Repeat Password" field.
+export default Register;

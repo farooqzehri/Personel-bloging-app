@@ -6,90 +6,62 @@ function Dashboard() {
       id: 1,
       title: "An Action Button Could Be Coming to the iPhone 15",
       author: "Farooq Zehri",
-      date: "may 5th, 2026",
+      date: "May 5th, 2026",
       desc: "Apple could be putting an Action button on your next iPhone. According to a July report from MacRumors, one of the iPhone 15 models is developer to feature a new button in the next-gen iPhone 15 Pro and Pro Max models.",
     },
     {
       id: 2,
       title: "What Is the Event Loop and How Does It Improve App Performance?",
       author: "Farooq Zehri",
-      date: "may 5th, 2026",
+      date: "May 5th, 2026",
       desc: "JavaScript is a single-threaded language, but to handle tasks one at a time. However, the event loop lets JavaScript handle events and callbacks asynchronously by ensuring simultaneous programming systems.",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Navbar */}
-      <nav className="bg-purple-600 text-white px-10 py-3 flex justify-between items-center">
-        <h1 className="font-semibold text-sm">Personal Blogging App</h1>
-
-        <div className="flex gap-6 text-xs">
-          <button>Farooq Zehri</button>
-          <button className="text-xl">Logout</button>
+    <div className="min-h-screen bg-gray-50">
+      <nav className="bg-[#7E3AF2] text-white px-10 py-3 flex justify-between items-center shadow-sm">
+        <h1 className="font-bold text-lg tracking-tight">Personal Blogging App</h1>
+        <div className="flex items-center gap-6 text-sm">
+          <span className="font-medium cursor-pointer hover:underline">Farooq Zehri</span>
+          <button className="bg-white/20 px-3 py-1 rounded hover:bg-white/30 transition">Logout</button>
         </div>
       </nav>
 
-      {/* Main Content */}
-      <div className="max-w-4xl mx-auto py-8 px-6">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">
-          Dashboard
-        </h2>
+      <div className="max-w-4xl mx-auto py-10 px-6">
+        <h2 className="text-4xl font-extrabold text-gray-900 mb-8">Dashboard</h2>
 
-        {/* Blog Form */}
-        <div className="bg-white shadow-md rounded-md p-6 mb-8">
+        {/* Improved Blog Form */}
+        <div className="bg-white shadow-xl border border-gray-100 rounded-xl p-8 mb-12">
           <input
             type="text"
-            placeholder="Placeholder"
-            className="w-full border border-purple-400 rounded px-4 py-2 mb-4 outline-none"
+            placeholder="Title"
+            className="w-full border border-gray-200 rounded-lg px-4 py-3 mb-4 outline-none focus:ring-2 focus:ring-[#7E3AF2]/50 transition"
           />
-
           <textarea
-            rows="4"
-            placeholder="What is in your mind"
-            className="w-full border border-gray-200 rounded px-4 py-2 mb-4 outline-none resize-none"
+            rows="5"
+            placeholder="What is on your mind?"
+            className="w-full border border-gray-200 rounded-lg px-4 py-3 mb-4 outline-none focus:ring-2 focus:ring-[#7E3AF2]/50 transition resize-none"
           ></textarea>
-
-          <button className="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2 rounded text-sm">
+          <button className="bg-[#7E3AF2] hover:bg-[#6930d3] text-white px-8 py-2.5 rounded-lg font-semibold transition shadow-md">
             Publish blog
           </button>
         </div>
 
-        {/* Blogs Section */}
-        <h3 className="text-xl font-semibold mb-4">My Blogs</h3>
-
-        <div className="space-y-5">
+        <h3 className="text-2xl font-bold text-gray-800 mb-6">My Blogs</h3>
+        <div className="space-y-6">
           {blogs.map((blog) => (
-            <div
-              key={blog.id}
-              className="bg-white shadow-sm rounded-md p-5 border"
-            >
-              <div className="flex gap-4">
-                {/* Blog Image */}
-                <img
-                  src="https://via.placeholder.com/60v"
-                  alt="blog"
-                  className="w-14 h-14 rounded"
-                />
-
-                {/* Blog Content */}
-                <div>
-                  <h4 className="font-bold text-lg text-gray-800">
-                    {blog.title}
-                  </h4>
-
-                  <p className="text-sm text-gray-500 mb-2">
-                    {blog.author} - {blog.date}
-                  </p>
-
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {blog.desc}
-                  </p>
-
-                  <div className="flex gap-4 mt-3 text-sm text-purple-600 font-medium">
-                    <button>Delete</button>
-                    <button>Edit</button>
-                  </div>
+            <div key={blog.id} className="bg-white shadow-md rounded-xl p-6 border border-gray-50 flex gap-5">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="blog" className="w-20 h-20 rounded-lg object-cover" />
+              <div className="flex-1">
+                <h4 className="font-bold text-xl text-gray-900">{blog.title}</h4>
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                  {blog.author} • {blog.date}
+                </p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">{blog.desc}</p>
+                <div className="flex gap-4 text-sm font-bold">
+                  <button className="text-red-500 hover:underline">Delete</button>
+                  <button className="text-[#7E3AF2] hover:underline">Edit</button>
                 </div>
               </div>
             </div>

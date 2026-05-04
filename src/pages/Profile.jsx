@@ -2,69 +2,51 @@ import React from "react";
 
 function Profile() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Navbar */}
-      <nav className="bg-purple-600 text-white px-10 py-3 flex justify-between items-center">
-        <h1 className="font-semibold text-sm">Personal Blogging App</h1>
-
-        <div className="flex gap-6 text-xs">
-          <button>Farooq Zehri</button>
-          <button className="text-xl">Logout</button>
-        </div>
+    <div className="min-h-screen bg-gray-50">
+      <nav className="bg-[#7E3AF2] text-white px-10 py-3 flex justify-between items-center shadow-sm">
+        <h1 className="font-bold text-lg">Personal Blogging App</h1>
+        <button className="text-sm font-medium hover:underline">Logout</button>
       </nav>
 
-      {/* Main Content */}
-      <div className="max-w-4xl mx-auto py-8 px-6">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">
-          Profile
-        </h2>
+      <div className="max-w-4xl mx-auto py-12 px-6">
+        <h2 className="text-4xl font-extrabold text-gray-900 mb-8">Profile</h2>
 
-        {/* Profile Card */}
-        <div className="bg-white shadow-md rounded-md p-6 max-w-3xl">
-          {/* Profile Image */}
-          <img
-            src="https://via.placeholder.com/60"
-            alt="profile"
-            className="w-28 h-28 rounded-xl object-cover mb-4"
-          />
-
-          {/* Name + Edit */}
-          <div className="flex items-center gap-2 mb-4">
-            <h3 className="font-semibold text-lg text-gray-800">
-              Farooq Zehri
-            </h3>
-            <button className="text-purple-600 text-sm">
+        <div className="bg-white shadow-2xl rounded-2xl p-10 border border-gray-100">
+          <div className="relative inline-block mb-6">
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="profile"
+              className="w-32 h-32 rounded-2xl object-cover shadow-lg border-4 border-white"
+            />
+            <button className="absolute -bottom-2 -right-2 bg-[#7E3AF2] text-white p-2 rounded-full shadow-lg hover:scale-110 transition">
               ✎
             </button>
           </div>
 
-          {/* Password Section */}
-          <h4 className="font-semibold text-gray-700 mb-3">
-            Password
-          </h4>
+          <h3 className="font-bold text-2xl text-gray-800 mb-8 border-b pb-4">Farooq Zehri</h3>
 
-          <div className="space-y-3 max-w-xs">
-            <input
-              type="password"
-              placeholder="Old password"
-              className="w-full border border-purple-400 rounded px-4 py-2 outline-none"
-            />
-
-            <input
-              type="password"
-              placeholder="New Password"
-              className="w-full border border-gray-300 rounded px-4 py-2 outline-none"
-            />
-
-            <input
-              type="password"
-              placeholder="Repeat password"
-              className="w-full border border-gray-300 rounded px-4 py-2 outline-none"
-            />
-
-            <button className="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2 rounded text-sm">
-              Update password
-            </button>
+          <div className="max-w-md">
+            <h4 className="font-bold text-gray-500 uppercase text-xs tracking-widest mb-4">Update Password</h4>
+            <div className="space-y-4">
+              <input
+                type="password"
+                placeholder="Old password"
+                className="w-full border border-gray-200 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-[#7E3AF2]/50"
+              />
+              <input
+                type="password"
+                placeholder="New Password"
+                className="w-full border border-gray-200 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-[#7E3AF2]/50"
+              />
+              <input
+                type="password"
+                placeholder="Repeat password"
+                className="w-full border border-gray-200 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-[#7E3AF2]/50"
+              />
+              <button className="w-full bg-[#7E3AF2] hover:bg-[#6930d3] text-white font-bold py-3 rounded-lg shadow-lg transition">
+                Update Password
+              </button>
+            </div>
           </div>
         </div>
       </div>
