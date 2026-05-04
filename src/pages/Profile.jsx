@@ -23,7 +23,7 @@ function Profile() {
         <div className="bg-white shadow-md rounded-md p-6 max-w-3xl">
           {/* Profile Image */}
           <img
-            src="https://avatars.githubusercontent.com/u/217073583?v=4"
+            src="https://via.placeholder.com/60"
             alt="profile"
             className="w-28 h-28 rounded-xl object-cover mb-4"
           />
