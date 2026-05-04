@@ -67,7 +67,7 @@ function Dashboard() {
               <div className="flex gap-4">
                 {/* Blog Image */}
                 <img
-                  src="https://avatars.githubusercontent.com/u/217073583?v=4"
+                  src="https://via.placeholder.com/60v"
                   alt="blog"
                   className="w-14 h-14 rounded"
                 />
