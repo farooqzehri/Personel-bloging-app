@@ -18,7 +18,7 @@ createRoot(document.getElementById('root')).render(
     <Route path='/register' element={<Register/>}/>
     <Route path='/dashboard' element={<Dashboard/>}/>
     <Route path='/profile' element={<Profile/>}/>
-    <Route path='profile:id' element={<Singleuser/>}/>
+    <Route path='/singleuser' element={<Singleuser/>}/>
 </Routes>
 </BrowserRouter>
 )
