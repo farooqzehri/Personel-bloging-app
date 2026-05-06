@@ -1,13 +1,16 @@
 import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Singleuser() {
+  const {id} = useParams()
+  const navigate = useNavigate();
   const blogs = [
     {
       id: 1,
       title: "Introducing Whisper",
       author: "Elon Musk",
       date: "August 17th, 2023",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6-a36k6Y-A9vV3_HnN8A-a27V_J8XpX4yZg&s",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHvmQTw2KvOBn_PhOjxFXNvd3mhIvkdXblMzv4stAbnAJe05Z4m2tpqdSaOsMF24l8wxLHmEKQdLCTc3monS9PHmR6_sNFtbISF51zmMQ&s=10",
       desc: "Whisper is an automatic speech recognition (ASR) system trained on 680,000 hours of multilingual and multitask supervised data collected from the web. We show that the use of such a large and diverse dataset leads to improved robustness to accents, background noise and technical language. Moreover, it enables transcription in multiple languages, as well as translation from those languages into English.",
     },
     {
@@ -15,7 +18,7 @@ function Singleuser() {
       title: "Introducing ChatGPT",
       author: "Elon Musk",
       date: "November 23rd, 2022",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6-a36k6Y-A9vV3_HnN8A-a27V_J8XpX4yZg&s",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHvmQTw2KvOBn_PhOjxFXNvd3mhIvkdXblMzv4stAbnAJe05Z4m2tpqdSaOsMF24l8wxLHmEKQdLCTc3monS9PHmR6_sNFtbISF51zmMQ&s=10",
       desc: "We've trained a model called ChatGPT which interacts in a conversational way. The dialogue format makes it possible for ChatGPT to answer followup questions, admit its mistakes, challenge incorrect premises, and reject inappropriate requests. Methods: We trained this model using Reinforcement Learning from Human Feedback (RLHF), using the same methods as InstructGPT.",
     },
   ];
@@ -31,7 +34,7 @@ function Singleuser() {
       {/* Breadcrumb Section */}
       <div className="bg-gray-50 border-b border-gray-100 py-10 px-10">
         <div className="max-w-6xl mx-auto">
-          <button className="text-[#7E3AF2] text-3xl font-bold flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <button onClick={() => navigate('/')} className="text-[#7E3AF2] text-3xl font-bold flex items-center gap-2 hover:opacity-80 transition-opacity">
             <span>&lt;</span> Back to all blogs
           </button>
         </div>
@@ -85,7 +88,7 @@ function Singleuser() {
           </h3>
           <div className="w-full">
             <img 
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6-a36k6Y-A9vV3_HnN8A-a27V_J8XpX4yZg&s" 
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHvmQTw2KvOBn_PhOjxFXNvd3mhIvkdXblMzv4stAbnAJe05Z4m2tpqdSaOsMF24l8wxLHmEKQdLCTc3monS9PHmR6_sNFtbISF51zmMQ&s=10" 
               alt="Elon Musk Large" 
               className="w-full h-[400px] object-cover rounded-3xl shadow-2xl"
             />

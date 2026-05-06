@@ -1,11 +1,20 @@
 import React from "react";
+import { supabase } from "../config/supabase";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
+  const navigate = useNavigate();
+    const handleLogout = async () => {
+    await supabase.auth.signOut()
+    navigate('/login')
+  }
   return (
     <div className="min-h-screen bg-gray-50">
       <nav className="bg-[#7E3AF2] text-white px-10 py-3 flex justify-between items-center shadow-sm">
         <h1 className="font-bold text-lg">Personal Blogging App</h1>
-        <button className="text-sm font-medium hover:underline">Logout</button>
+        <button className="text-sm font-medium hover:underline" onClick={handleLogout}>
+          Logout
+        </button>
       </nav>
 
       <div className="max-w-4xl mx-auto py-12 px-6">
@@ -46,6 +55,7 @@ function Profile() {
               <button className="w-full bg-[#7E3AF2] hover:bg-[#6930d3] text-white font-bold py-3 rounded-lg shadow-lg transition">
                 Update Password
               </button>
+              <p>test@gmail.com <span><b>112233</b></span></p>
             </div>
           </div>
         </div>
