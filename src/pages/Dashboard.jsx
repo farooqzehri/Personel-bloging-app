@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
+  const navigate = useNavigate();
   const blogs = [
     {
       id: 1,
@@ -17,14 +20,17 @@ function Dashboard() {
       desc: "JavaScript is a single-threaded language, but to handle tasks one at a time. However, the event loop lets JavaScript handle events and callbacks asynchronously by ensuring simultaneous programming systems.",
     },
   ];
-
+  const handleLogout = async () => {
+    await supabase.auth.signOut()
+    navigate('/login')
+  }
   return (
     <div className="min-h-screen bg-gray-50">
       <nav className="bg-[#7E3AF2] text-white px-10 py-3 flex justify-between items-center shadow-sm">
         <h1 className="font-bold text-lg tracking-tight">Personal Blogging App</h1>
         <div className="flex items-center gap-6 text-sm">
           <span className="font-medium cursor-pointer hover:underline">Farooq Zehri</span>
-          <button className="bg-white/20 px-3 py-1 rounded hover:bg-white/30 transition">Logout</button>
+          <button className="bg-white/20 px-3 py-1 rounded hover:bg-white/30 transition" onClick={handleLogout}>Logout</button>
         </div>
       </nav>
 
