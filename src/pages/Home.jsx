@@ -1,10 +1,15 @@
+import  { useEffect } from "react";
+import { supabase } from "../config/supabase";
+import { Navigate, useNavigate } from "react-router-dom";
 import React from "react";
 
 function Home() {
+  const navigate = useNavigate()
   const blogs = [
     {
       id: 1,
       title: "Introducing Whisper",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHvmQTw2KvOBn_PhOjxFXNvd3mhIvkdXblMzv4stAbnAJe05Z4m2tpqdSaOsMF24l8wxLHmEKQdLCTc3monS9PHmR6_sNFtbISF51zmMQ&s=10",
       author: "Elon Musk",
       date: "August 17th, 2025",
       desc: "Whisper is an automatic speech recognition (ASR) system trained on 680,000 hours of multilingual and multitask supervised data collected from the web. We show that the use of such a large and diverse dataset leads to improved robustness to accents, background noise and technical language.",
@@ -24,6 +29,31 @@ function Home() {
       desc: "JavaScript is a single-threaded language, but to handle tasks one at a time. However, the event loop lets JavaScript handle events and callbacks asynchronously by ensuring simultaneous programming systems.",
     },
   ];
+  useEffect(()=> {
+    const getUser = async () => {
+
+      const {data , error} = await supabase.auth.getUser();
+      if (error){
+        console.log(error);
+        navigate('/login')
+        }else{
+          console.log(data );
+        }
+      
+    }
+    getUser();
+  }, [])
+  const logout = async () => {
+    const {error} = await supabase.auth.signOut()
+    if(error){
+      console.log(error);
+    }else{
+       navigate('/login')
+    }
+    
+    
+  }
+ 
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -31,7 +61,7 @@ function Home() {
       <nav className="bg-purple-600 text-white px-10 py-3 flex justify-between items-center">
         <h1 className="font-semibold text-sm">Personal Blogging App</h1>
 
-        <button className="text-xl">Login</button>
+        <button className="bg-white/20 px-3 py-1 rounded hover:bg-white/30 transition" onClick={logout}>Logout</button>
       </nav>
 
       {/* Main Content */}
@@ -73,7 +103,8 @@ function Home() {
                     {blog.desc}
                   </p>
 
-                  <button className="mt-3 text-sm text-purple-600 font-medium">
+                  <button className="mt-3 text-sm text-purple-600 font-medium"
+                  onClick={() => navigate(`/singleuser`)}>
                     see all from this user
                   </button>
                 </div>
