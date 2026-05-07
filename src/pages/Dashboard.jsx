@@ -21,9 +21,28 @@ function Dashboard() {
       desc: "JavaScript is a single-threaded language, but to handle tasks one at a time. However, the event loop lets JavaScript handle events and callbacks asynchronously by ensuring simultaneous programming systems.",
     },
   ];
+   useEffect(()=> {
+      const getUser = async () => {
+  
+        const {data , error} = await supabase.auth.getUser();
+        if (error){
+          console.log(error);
+          navigate('/login')
+          }else{
+            console.log(data );
+          }
+        
+      }
+      getUser();
+    }, [])
   const handleLogout = async () => {
-    await supabase.auth.signOut()
-    navigate('/login')
+    const { error } = await supabase.auth.signOut();
+    if(error){
+      console.log(error);
+    }else{
+
+      navigate('/login')
+    }
   }
   return (
     <div className="min-h-screen bg-gray-50">
