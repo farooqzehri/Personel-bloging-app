@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { supabase } from "../config/supabase";
 import { useNavigate } from "react-router-dom";
 
 function Profile() {
+   useEffect(()=> {
+      const getUser = async () => {
+  
+        const {data , error} = await supabase.auth.getUser();
+        if (error){
+          console.log(error);
+          navigate('/login')
+          }else{
+            console.log(data );
+          }
+        
+      }
+      getUser();
+    }, [])
   const navigate = useNavigate();
     const handleLogout = async () => {
-    await supabase.auth.signOut()
-    navigate('/login')
+    const { error } = await supabase.auth.signOut();
+    if(error){
+      console.log(error);
+    }else{
+      navigate('/login')
+    }
   }
   return (
     <div className="min-h-screen bg-gray-50">
