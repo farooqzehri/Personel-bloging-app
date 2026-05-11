@@ -22,3 +22,5 @@ createRoot(document.getElementById('root')).render(
 </Routes>
 </BrowserRouter>
 )
+
+// git commit -m "Set up routing and main entry point for the blogging app"
