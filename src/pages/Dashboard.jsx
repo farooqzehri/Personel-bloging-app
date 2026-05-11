@@ -99,3 +99,5 @@ function Dashboard() {
 }
 
 export default Dashboard;
+
+// git commit -m "Dashboard page with improved UI and logout functionality" 
