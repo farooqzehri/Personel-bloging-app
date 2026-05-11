@@ -83,3 +83,4 @@ function Profile() {
 }
 
 export default Profile;
+// git commit -m "Profile page with user details and password update form"
