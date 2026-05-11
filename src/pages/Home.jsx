@@ -45,7 +45,7 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Navbar */}
+     
       <nav className="bg-purple-600 text-white px-10 py-3 flex justify-between items-center">
         <h1 className="font-semibold text-sm">Personal Blogging App</h1>
 
