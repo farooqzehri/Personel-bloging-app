@@ -62,7 +62,7 @@ function Home() {
           All Blogs
         </h3>
 
-        {/* Blog Cards */}
+     
         <div className="space-y-5">
           {blogs.map((blog) => (
             <div
